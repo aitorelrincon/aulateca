@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Aulateca</title>
+</head>
+<body>
+    <div class="flex flex-col mb-20 ml-20">
+        <h1 class="font-bold text-9xl mb-4">AULATECA</h1>
+    </div>
+    <div id="model" class="flex justify-center">
+        <iframe src="https://my.matterport.com/show/?m=rw7xpM6FJc2" frameborder="0"></iframe> 
+        <p>Modelo 3D tomado mediante la Matterport Pro 2 por los alumnos de IES El Rincón</p>
+    </div>
+</body>
+<footer class="flex w-full justify-around absolute bottom-0">
+    <img class="w-auto h-20 my-4" src="logo.png" alt="gamedevslogo">
+    <img class="w-auto h-20 my-4" src="logo1.png" alt="logo1">
+    <img class="w-auto h-20 my-4" src="logo2.png" alt="logo2">
+    <img class="w-auto h-20 my-4" src="grp-logo.png" alt="logo3">
+</footer>
+</html>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+    }
+
+    iframe{
+        width: 40%;
+        height: 100%;
+    }
+
+    #model{
+        height: 50vh;
+    }
+
+    footer, img{
+        background: #0061e0
+    }
+
+    p{
+        position: absolute;
+        left: calc(iframe / 2);
+        display: none;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        pointer-events: none;
+    }
+</style>
+
+<script>
+    const iframe = document.querySelector('iframe');
+    const texto = document.querySelector('p');
+
+    iframe.addEventListener('mouseenter', () => {
+      texto.style.display = 'block';
+    });
+
+    iframe.addEventListener('mouseleave', () => {
+      texto.style.display = 'none';
+    });
+</script>
